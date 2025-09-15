@@ -2,7 +2,7 @@ import mysql.connector as connector
 
 class DBHelper:
     def __init__(self):
-        self.con = connector.connect(host="localhost",  port='3306',user="root",password="system", database="my_db")
+        self.con = connector.connect(host="localhost",  port='3306',user="root",password="password", database="database")
         query ='create table if not exists user(id int primary key ,userName varchar(20), phNumber varchar(12))'
         
         cur = self.con.cursor()
@@ -44,4 +44,5 @@ class DBHelper:
         cur.execute(query, values)
         self.con.commit()
         print("Updated")
+
     
